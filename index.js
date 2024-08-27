@@ -4,13 +4,17 @@ const { connectMongoDb} = require ("./Connection/connection");
 const routes = require("./Routers/user");
 const path = require ("path");
 const cors = require ("cors")
+require('dotenv').config();
 
 //Variable
-const port = 8003;
+const port = process.env.PORT || 8003;
+
+
 const username = encodeURIComponent("muhammadwazahatrza092");
 const password = encodeURIComponent("244466666");
 // ${username}:${password}
 // const DB = "mongodb://127.0.0.1:27017/MyNotesDb";
+
 const DB = `mongodb+srv://${username}:${password}@cluster0.roldr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 //Connection 
 connectMongoDb(DB , {

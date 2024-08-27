@@ -3,7 +3,7 @@ const User = require("../Models/user");
 //Handlers or controllers : they will go in the controller file
 // Crete new user
 const handleCreateNewUser = async (req, res) => {
-  console.log("i am post method");
+  // console.log("i am post method");
   const body = req.body;
   console.log(body);
   await User.create({
@@ -16,7 +16,7 @@ const handleCreateNewUser = async (req, res) => {
 
 // Get or Read all users
 const handleGetAllUsers = async (req, res) => {
-  console.log("hello");
+  // console.log("hello");
   const user = await User.find({});
   res.json(user);
 };
